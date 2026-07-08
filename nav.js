@@ -15,7 +15,7 @@
   </svg>`;
 
   /* Same paths — tagline recoloured to champagne gold for dark backgrounds */
-  const LOGO_DARK = LOGO.replace('fill="#1B1918"','fill="#C8A84B"');
+  const LOGO_DARK = LOGO.replace('fill="#1B1918"','fill="#B8854A"');
 
   const ADDR = `Sumel Business Park-VI, H Block 309/10/11,<br>3rd Floor, Tavdipura Road, Dudheshwar,<br>Ahmedabad – 380004, Gujarat, India`;
 
