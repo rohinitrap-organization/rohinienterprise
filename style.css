@@ -2100,17 +2100,24 @@ button {
 /* images css */
 
 .azolla-gallery {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  /* display: flex;
+  flex-direction: row; */
+  /* justify-content: center; */
   /* Center images */
   /* align-items: center; */
   gap: 20px;
   /* Space between images */
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   /* Responsive */
   margin: 20px 0;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 52px;
 }
+
+display: grid;
+grid-template-columns: 1.1fr 1fr;
+gap: 52px;
 
 .gallery-item {
   flex: 0 0 auto;
