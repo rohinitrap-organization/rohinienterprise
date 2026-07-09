@@ -2115,9 +2115,6 @@ button {
   gap: 52px;
 }
 
-display: grid;
-grid-template-columns: 1.1fr 1fr;
-gap: 52px;
 
 .gallery-item {
   flex: 0 0 auto;
@@ -2133,7 +2130,9 @@ gap: 52px;
 
 @media (max-width: 480px) {
   .azolla-gallery {
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 12px;
     padding: 0 15px;
   }
 
@@ -2142,8 +2141,24 @@ gap: 52px;
   }
 
   .gallery-item img {
-    width: 100%;
+    /* width: 100%; */
     height: auto;
     display: block;
+  }
+}
+
+/* about page  */
+
+.two-column-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .two-column-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
   }
 }
