@@ -2105,7 +2105,7 @@ button {
   justify-content: center;
   /* Center images */
   /* align-items: center; */
-  gap: 72px;
+  gap: 20px;
   /* Space between images */
   flex-wrap: wrap;
   /* Responsive */
