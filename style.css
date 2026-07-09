@@ -2167,3 +2167,85 @@ button {
   }
 
 }
+
+/* index pages */
+
+.export-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 992px) {
+  .export-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .export-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .export-grid .feat {
+    padding: 20px;
+  }
+
+  .export-grid .feat h3 {
+    font-size: 15px !important;
+  }
+
+  .export-grid .feat p {
+    font-size: 14px !important;
+    line-height: 1.6;
+  }
+
+  .sh h2 {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .sh p {
+    font-size: 15px;
+  }
+}
+
+
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 48px;
+}
+
+.btn-outline-g {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 32px;
+  text-align: center;
+}
+
+.btn-outline-g .arrow {
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+
+  .btn-wrapper {
+    margin-top: 32px;
+    padding: 0 16px;
+  }
+
+  .btn-outline-g {
+    width: 100%;
+    max-width: 100%;
+    padding: 14px 18px;
+    font-size: 14px;
+
+    white-space: normal;
+    line-height: 1.5;
+  }
+}
