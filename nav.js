@@ -1,10 +1,10 @@
-(function(){
-  const P=[
-    {href:'index.html',id:'home',label:'Home'},
-    {href:'products.html',id:'products',label:'Products'},
-    {href:'about.html',id:'about',label:'About'},
-    {href:'quality.html',id:'quality',label:'Quality'},
-    {href:'contact.html',id:'contact',label:'Inquire'},
+(function () {
+  const P = [
+    { href: 'index.html', id: 'home', label: 'Home' },
+    { href: 'products.html', id: 'products', label: 'Products' },
+    { href: 'about.html', id: 'about', label: 'About' },
+    { href: 'quality.html', id: 'quality', label: 'Quality' },
+    { href: 'contact.html', id: 'contact', label: 'Inquire' },
   ];
 
   /* ══ Exact vector logo extracted from CDR — "re · A Quality Tarp" ══ */
@@ -15,11 +15,12 @@
   </svg>`;
 
   /* Same paths — tagline recoloured to champagne gold for dark backgrounds */
-  const LOGO_DARK = LOGO.replace('fill="#1B1918"','fill="#B8854A"');
+  const LOGO_DARK = LOGO.replace('fill="#1B1918"', 'fill="#B8854A"');
 
   const ADDR = `Sumel Business Park-VI, H Block 309/10/11,<br>3rd Floor, Tavdipura Road, Dudheshwar,<br>Ahmedabad – 380004, Gujarat, India`;
 
-  function nav(a){return`
+  function nav(a) {
+    return `
 <nav class="site-nav">
   <div class="container nav-inner">
     <a href="index.html" class="brand" style="gap:12px">
@@ -30,16 +31,18 @@
       </div>
     </a>
     <div class="nav-links" id="nL">
-      ${P.map(p=>`<a href="${p.href}"${p.id===a?' class="act"':''}>${p.label}</a>`).join('')}
+      ${P.map(p => `<a href="${p.href}"${p.id === a ? ' class="act"' : ''}>${p.label}</a>`).join('')}
     </div>
     <div class="nav-r">
       <a href="contact.html" class="btn btn-gold btn-sm"><span class="hm">Request Quote </span><svg class="arrow" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9h12M10 4l5 5-5 5"/></svg></a>
       <button class="nav-tog" id="nT" aria-label="Menu" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="2" y1="5" x2="18" y2="5"/><line x1="2" y1="10" x2="18" y2="10"/><line x1="2" y1="15" x2="18" y2="15"/></svg></button>
     </div>
   </div>
-</nav>`;}
+</nav>`;
+  }
 
-  function foot(){return`
+  function foot() {
+    return `
 <footer class="foot">
   <div class="container">
     <div class="foot-grid">
@@ -79,22 +82,23 @@
     </div>
     <div class="foot-bottom"><span>© 2026 Rohini Enterprise · 7 Horses is a registered brand. All rights reserved.</span><span style="font-family:var(--fm);font-size:.66rem">HDPE / PP Manufacturer · GST Registered · Ahmedabad, Gujarat, India</span></div>
   </div>
-</footer>`;}
-
-  function reveal(){
-    const els=document.querySelectorAll('.rv,.rv-l');
-    if(!('IntersectionObserver' in window)){els.forEach(e=>e.classList.add('in'));return;}
-    const ob=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');ob.unobserve(x.target);}});},{threshold:.07,rootMargin:'0px 0px -44px 0px'});
-    els.forEach(e=>ob.observe(e));
+</footer>`;
   }
 
-  window.injectShell=function(active){
-    const nr=document.getElementById('nav-root'),fr=document.getElementById('footer-root');
-    if(nr)nr.innerHTML=nav(active);
-    if(fr)fr.innerHTML=foot();
-    const t=document.getElementById('nT'),l=document.getElementById('nL');
-    if(t&&l){t.addEventListener('click',()=>{const o=l.classList.toggle('open');t.setAttribute('aria-expanded',o);});l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{l.classList.remove('open');t.setAttribute('aria-expanded','false');}));}
+  function reveal() {
+    const els = document.querySelectorAll('.rv,.rv-l');
+    if (!('IntersectionObserver' in window)) { els.forEach(e => e.classList.add('in')); return; }
+    const ob = new IntersectionObserver(e => { e.forEach(x => { if (x.isIntersecting) { x.target.classList.add('in'); ob.unobserve(x.target); } }); }, { threshold: .07, rootMargin: '0px 0px -44px 0px' });
+    els.forEach(e => ob.observe(e));
+  }
+
+  window.injectShell = function (active) {
+    const nr = document.getElementById('nav-root'), fr = document.getElementById('footer-root');
+    if (nr) nr.innerHTML = nav(active);
+    if (fr) fr.innerHTML = foot();
+    const t = document.getElementById('nT'), l = document.getElementById('nL');
+    if (t && l) { t.addEventListener('click', () => { const o = l.classList.toggle('open'); t.setAttribute('aria-expanded', o); }); l.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { l.classList.remove('open'); t.setAttribute('aria-expanded', 'false'); })); }
     reveal();
-    document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>{const it=q.parentElement,was=it.classList.contains('open');document.querySelectorAll('.faq').forEach(f=>f.classList.remove('open'));if(!was)it.classList.add('open');}));
+    document.querySelectorAll('.faq-q').forEach(q => q.addEventListener('click', () => { const it = q.parentElement, was = it.classList.contains('open'); document.querySelectorAll('.faq').forEach(f => f.classList.remove('open')); if (!was) it.classList.add('open'); }));
   };
 })();
